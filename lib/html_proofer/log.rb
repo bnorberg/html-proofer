@@ -15,7 +15,9 @@ module HTMLProofer
         name: "HTMLProofer", \
         level: "gte.#{log_level}") do |l|
         l.adapter(:stdout, level: "lte.warn")
+        l.adapter(:file, 'html_proofer.log', level: "lte.warn")
         l.adapter(:stderr, level: "gte.error")
+        l.adapter(:file, 'html_proofer.log', level: "gte.error")
       end
     end
 
